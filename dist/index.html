@@ -3,16 +3,17 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bloc Chat</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
     <ui-view></ui-view>
-    <!-- App JS -->
-    <script src="/scripts/app.js"></script>
     
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    
+    
+    
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
     
@@ -29,5 +30,14 @@
       };
       firebase.initializeApp(config);
     </script>
+    <!-- App JS -->
+    <script src="/scripts/app.js"></script>
+    
+    <!-- Controllers -->
+    <script src="/scripts/controllers/RoomsCtrl.js"></script>
+    
+    <!-- Services -->
+    <script src="/scripts/services/Room.js"></script>
+    
 </body>
 </html>

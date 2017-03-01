@@ -1,1 +1,5 @@
-<h1>Home Page</h1>
+<div class="chatrooms-container">
+    <div class="hero-title" ng-repeat="room in chatRooms.rooms">
+        {{ room.$value }}
+    </div>
+</div>
