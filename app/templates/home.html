@@ -1,5 +1,15 @@
-<div class="chatrooms-container">
-    <div class="hero-title" ng-repeat="room in chatRooms.rooms">
-        {{ room.$value }}
+<div class="chatroom-container">
+    <div class="items">
+        
+        <button type="button" class="btn btn-default" ng-click="room.openModal()">New Room</button>
+        
+        <ul class="nav flex-column">
+            <li class="nav-item" ng-repeat="rooms in room.list()">
+                <a class="nav-link" href="#">{{ rooms }}</a>
+            </li>
+        </ul>
+        
     </div>
 </div>
+
+

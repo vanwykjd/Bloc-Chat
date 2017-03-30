@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <title>Bloc Chat</title>
     <link rel="stylesheet" href="/styles/main.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
 <body>
+    <div class="jumbotron">
+        <h1>Bloc Chat</h1>
+    </div>
     <ui-view></ui-view>
     
     <!-- Angular -->
@@ -18,7 +23,7 @@
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
     
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
@@ -34,10 +39,15 @@
     <script src="/scripts/app.js"></script>
     
     <!-- Controllers -->
+    <script src="/scripts/controllers/CreateRoomCtrl.js"></script>
     <script src="/scripts/controllers/RoomsCtrl.js"></script>
     
     <!-- Services -->
     <script src="/scripts/services/Room.js"></script>
+    
+    <!-- Angular-UI-Bootstrap -->
+   <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+
     
 </body>
 </html>
