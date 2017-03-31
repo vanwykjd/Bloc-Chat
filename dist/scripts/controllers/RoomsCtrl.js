@@ -3,19 +3,15 @@
         this.list = Room.getRooms;
         
         this.openModal = function() {
-            var modalInstance = $uibModal.open({
+            var modal = $uibModal.open({
                 templateUrl: '/templates/create_room.html',
                 size: 'sm',
                 controller: function($scope) {
+                    var room = $scope.room;
                     
-                    $scope.room = {
-                        $value: Room.getRooms()[0].$value
-                    };
-                    
-                    var newRoom = $scope.roomName;
-                    $scope.ok = function(newRoom) {
-                        $scope.add = Room.addRoom(newRoom);
-                        modalInstance.dismiss( { $value: $scope.room } );
+                    $scope.ok = function(room) {
+                        Room.addRoom(room)
+                        modal.dismiss();
                     };
                 }
             });
@@ -23,6 +19,7 @@
         
         
     }
+    
     
     angular
         .module('blocChat')

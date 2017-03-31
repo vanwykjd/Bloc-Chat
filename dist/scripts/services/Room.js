@@ -11,11 +11,7 @@
         };
         
         Room.addRoom = function(room) {
-            roomsList.$add(room).then(function(roomsRef) {
-                var id = roomsRef.key;
-                console.log("added record with id " + id);
-                roomsList.$indexFor(id);
-            });
+            roomsList.$add(room);
         };
         
         return Room;

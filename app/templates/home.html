@@ -4,8 +4,8 @@
         <button type="button" class="btn btn-default" ng-click="room.openModal()">New Room</button>
         
         <ul class="nav flex-column">
-            <li class="nav-item" ng-repeat="rooms in room.list()">
-                <a class="nav-link" href="#">{{ rooms }}</a>
+            <li class="nav-item" ng-repeat="room in room.list()">
+                <a class="nav-link" href="#">{{ room }}</a>
             </li>
         </ul>
         

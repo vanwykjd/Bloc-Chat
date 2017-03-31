@@ -11,7 +11,8 @@
                 url: '/',
                 controller: 'RoomsCtrl as room',
                 templateUrl: '/templates/home.html'
-            })
+            });
+            
     }
 
 angular
