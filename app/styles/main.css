@@ -1,18 +1,19 @@
 body {
-    background-image: url(../assets/images/backgrounds/home.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    font-family: 'Open Sans';
-    color: white;
     min-height: 100%;
     padding-bottom: 200px;
 }
 
-
-
-.chatroom-container {
+.chatroom-list-container {
+    float: left;
     width: 20%;
     height: 100%;
+    padding-left: 1%;
+}
+
+.chatroom-content {
+    float: left;
+    width: 80%;
+    height: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
 }

@@ -1,15 +1,26 @@
-<div class="chatroom-container">
-    <div class="items">
+<div class="chatroom-list-container">
+    <div class="list-group">
+        <button type="button" class="list-group-item" ng-repeat="room in room.roomList" ng-click="selectRoom(room); getMessages(room.$id)">
+            {{ room.$value }}
+        </button>
+    </div>
+    
+    <button type="button" class="btn btn-primary" ng-click="room.openModal()">Create Room</button>
+    
+</div>
+
+<div class="chatroom-content" ng-show="showChatRoom(activeRoom)">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1 class="panel-title">{{activeRoom.$value}}</h1>
+        </div>
         
-        <button type="button" class="btn btn-default" ng-click="room.openModal()">New Room</button>
-        
-        <ul class="nav flex-column">
-            <li class="nav-item" ng-repeat="room in room.list()">
-                <a class="nav-link" href="#">{{ room }}</a>
-            </li>
-        </ul>
+        <div class="panel-body">
+            <div ng-repeat="message in messages">
+                <h3>{{ message.user_id }}<span class="small">&nbsp&nbsp{{ message.timeSent }}</span></h3>
+                <p>&nbsp&nbsp&nbsp{{ message.content }}</p>
+            </div>
+        </div>
         
     </div>
 </div>
-
-

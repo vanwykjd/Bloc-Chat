@@ -2,7 +2,7 @@
     function Room($firebaseArray) {
         var Room = {};
         var ref = firebase.database().ref();
-        var roomsRef = ref.child("rooms").orderByChild("timestamp");
+        var roomsRef = ref.child("rooms").orderByKey();
         
         var roomsList = $firebaseArray(roomsRef);
         

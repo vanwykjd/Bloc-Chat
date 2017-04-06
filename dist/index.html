@@ -7,10 +7,11 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     
 </head>
-<body>
-    <div class="jumbotron">
-        <h1>Bloc Chat</h1>
+<body style="background-color: #CED1D8">
+    <div class="jumbotron" style="background-color:#555D71">
+        <h1 style="color: #7FB3D5">Bloc Chat</h1>
     </div>
+    
     <ui-view></ui-view>
     
     <!-- Angular -->
@@ -39,11 +40,12 @@
     <script src="/scripts/app.js"></script>
     
     <!-- Controllers -->
-    <script src="/scripts/controllers/CreateRoomCtrl.js"></script>
+    <script src="/scripts/controllers/MessagesCtrl.js"></script>
     <script src="/scripts/controllers/RoomsCtrl.js"></script>
     
     <!-- Services -->
     <script src="/scripts/services/Room.js"></script>
+    <script src="/scripts/services/Message.js"></script>
     
     <!-- Angular-UI-Bootstrap -->
    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
