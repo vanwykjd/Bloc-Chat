@@ -1,9 +1,9 @@
 (function() {
-    function MessagesCtrl(Room, $scope) {
-        
+    function MessagesCtrl(User) {
+       
     }
     
     angular
         .module('blocChat')
-        .controller('MessagesCtrl', ['Room', '$scope', MessagesCtrl]);
+        .controller('MessagesCtrl', ['User', MessagesCtrl]);
 })();

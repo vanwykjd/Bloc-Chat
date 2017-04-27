@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html ng-app="blocChat">
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Bloc Chat</title>
-    <link rel="stylesheet" href="/styles/main.css">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Bloc Chat</title>
+        <link rel="stylesheet" href="/styles/main.css">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     
-</head>
-<body style="background-color: #CED1D8">
-    <div class="jumbotron" style="background-color:#555D71">
-        <h1 style="color: #7FB3D5">Bloc Chat</h1>
-    </div>
+    </head>
+    
+    <body style="background-color: #CED1D8">
+        <div class="jumbotron" style="background-color:#555D71">
+            <h1 style="color: #7FB3D5">Bloc Chat</h1>
+        </div>
     
     <ui-view></ui-view>
+    
     
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
+ 
     
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    
     
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
@@ -36,6 +39,8 @@
       };
       firebase.initializeApp(config);
     </script>
+    
+    
     <!-- App JS -->
     <script src="/scripts/app.js"></script>
     
@@ -46,10 +51,11 @@
     <!-- Services -->
     <script src="/scripts/services/Room.js"></script>
     <script src="/scripts/services/Message.js"></script>
+    <script src="/scripts/services/User.js"></script>
     
     <!-- Angular-UI-Bootstrap -->
-   <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
 
     
-</body>
+    </body>
 </html>
