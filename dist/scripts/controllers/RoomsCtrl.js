@@ -20,16 +20,33 @@
                 }
             });
         };
-
+        
         $scope.user = this.user;
         
         $scope.selectRoom = function(room) {
-            $scope.activeRoom = room;
+            if ($scope.activeRoom !== room) {
+                $scope.activeRoom = room;
+            }
+            return $scope.activeRoom;
         };
-        
         
         $scope.getMessages = function(room_id) {
            $scope.messages = Message.getByRoomId(room_id);
+        };
+        
+        $scope.sendMessage = function() {
+            var newMessage = $scope.message;
+            if (newMessage && newMessage !== '') {
+                var message = {
+                    content: newMessage,
+                    room_id: $scope.activeRoom.$id,
+                    timeSent: Date.now(),
+                    user_id: $scope.user.id
+                };
+                Message.send(message);
+                $scope.message = '';
+            };
+            
         };
         
         $scope.showChatRoom = function(room) {
@@ -37,7 +54,6 @@
                return true;
             } 
         };
-        
         
     }
     

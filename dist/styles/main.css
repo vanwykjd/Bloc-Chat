@@ -17,3 +17,15 @@ body {
     padding-left: 3%;
     padding-right: 3%;
 }
+
+
+.login-modal-backdrop {
+    opacity: .95 !important;
+    background-color: #555D71 !important;
+}
+
+.login-modal-window .modal-dialog {
+    top: 25% !important;
+}
+
+

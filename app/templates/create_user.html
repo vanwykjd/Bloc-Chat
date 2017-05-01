@@ -1,25 +1,23 @@
 
 <div class="modal-header">
-    <h3 class="modal-title" id="modal-title">Enter Username</h3>
+    <div class="col-sm-10 col-sm-offset-1 col-xs-10 col-sm-offset-1">
+        <h1 class="modal-title" id="modal-title">Welcome to Bloc Chat!</h3>
+    </div>
 </div>
 
-    <div class="modal-body" id="modal-body">
-        <form class="form-horizontal" role="form">
-    	    <div class="form-group">
-              <div class="col-sm-10 col-sm-offset-1">
-                  <label>Create a username:</label>
-                  <input type="text" class="form-control" ng-model="userName">
-              </div>
-    		</div>
-    	</form>
-    </div>
-
+<div class="modal-body" id="modal-body">
+    <form class="form-horizontal" role="form">
+	    <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-1 col-xs-10 col-sm-offset-1">
+              <label>Create a username to enter:</label>
+              <input type="text" class="form-control" ng-model="userName">
+          </div>
+		</div>
+	</form>
+</div>
 
 <div class="modal-footer">
-    <button class="btn btn-secondary" style="width: 48%" type="button" ng-click="cancel()">Cancel</button>
-   
-        <button class="btn btn-success" style="width: 48%" type="button" ng-click="ok()">
-            Add &nbsp<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        </button>
-
+    <button class="btn btn-success col-sm-10 col-sm-offset-1 col-xs-10 col-sm-offset-1" type="button" ng-click="ok()">
+        Continue &nbsp<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+    </button>
 </div>

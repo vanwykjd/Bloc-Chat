@@ -1,20 +1,26 @@
 (function() {
     function Message($firebaseArray) {
         var Message = {};
+        var ref = firebase.database().ref();
+        var messageRef = ref.child("messages").orderByChild('room_id');
         
-        var ref = firebase.database().ref().child("messages");
-        var messageList = $firebaseArray(ref);
+        var messageList = $firebaseArray(messageRef);
         
         
         Message.getMessages = function() {
             return messageList;
         };
         
-        Message.getByRoomId = function(room_id) {
-            var messageRef = ref.orderByChild('room_id').equalTo(room_id);
-            var roomMessages = $firebaseArray(messageRef);
+        Message.getByRoomId = function(room) {
+            var room_id = room.$id;
+            var roomMessages = messageRef.equalTo(room_id);
+            var messagesByRoom = $firebaseArray(roomMessages);
             
-            return roomMessages;
+            return messagesByRoom;
+        };
+        
+        Message.send = function(message) {
+            messageList.$add(message);
         };
         
         

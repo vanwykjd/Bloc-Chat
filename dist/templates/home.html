@@ -4,11 +4,11 @@
 
 <div class="chatroom-list-container">
     <div class="list-group">
-        <button type="button" class="list-group-item" ng-repeat="room in room.roomList" ng-click="selectRoom(room); getMessages(room.$id)">
+        <button type="button" class="list-group-item" ng-repeat="room in chatRooms.roomList" ng-click="selectRoom(room); getMessages(room)">
             {{ room.$value }}
         </button>
     </div>
-    <button type="button" class="btn btn-primary" ng-click="room.openModal()">Create Room</button>
+    <button type="button" class="btn btn-primary" ng-click="chatRooms.openModal()">Create Room</button>
 </div>
 
 <div class="chatroom-content" ng-show="showChatRoom(activeRoom)">
@@ -19,10 +19,15 @@
         
         <div class="panel-body">
             <div ng-repeat="message in messages">
-                <h3>{{ message.user_id }}<span class="small">&nbsp&nbsp{{ message.timeSent }}</span></h3>
+                <h3>{{ message.user_id }}<span class="small">&nbsp&nbsp{{ message.timeSent | date:'shortTime' }}</span></h3>
                 <p>&nbsp&nbsp&nbsp{{ message.content }}</p>
             </div>
         </div>
-        
+    </div>
+    
+    <div class="input-group">
+        <input type="text" class="form-control" id="newMessage" ng-model="message" placeholder="Add to {{activeRoom.$value}} conversation...">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="sendMessage(message)">Send</span>
     </div>
 </div>

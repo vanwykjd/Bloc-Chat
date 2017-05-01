@@ -10,7 +10,7 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                controller: 'RoomsCtrl as room',
+                controller: 'RoomsCtrl as chatRooms',
                 templateUrl: '/templates/home.html'
             });
             
@@ -22,9 +22,11 @@
         if (!User.getUser() || User.getUser() === '') {
             var modal = $uibModal.open({
                     templateUrl: '/templates/create_user.html',
-                    size: 'sm',
                     keyboard: false,
                     backdrop: 'static',
+                    backdropClass: 'login-modal-backdrop',
+                    windowClass: 'login-modal-window',
+                    size: 'md',
                     controller: function($scope) {
                         $scope.ok = function() {
                             var user_id = $scope.userName;
