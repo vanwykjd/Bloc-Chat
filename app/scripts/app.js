@@ -26,8 +26,17 @@
                     backdrop: 'static',
                     backdropClass: 'login-modal-backdrop',
                     windowClass: 'login-modal-window',
-                    size: 'md',
                     controller: function($scope) {
+                        $scope.submitUser = function() {
+                            var key = event.keyCode;
+                            var user_id = $scope.userName;
+                            if(key === 13) {
+                                if(user_id && user_id != '') {
+                                    User.setUser(user_id);
+                                    modal.close(User.getUser());
+                                }
+                            }
+                        };
                         $scope.ok = function() {
                             var user_id = $scope.userName;
                                 if(user_id && user_id != '') {

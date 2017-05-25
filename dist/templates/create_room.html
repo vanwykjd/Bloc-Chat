@@ -1,21 +1,24 @@
-<div class="modal-header">
-    <h3 class="modal-title" id="modal-title">Create New Room</h3>
+<div class="create-room_modal">
+<div class="modal-header" id="modal_header">
+    <div class="modal-title modal_title">
+        <h3>Create a Room</h3>
+    </div>
 </div>
 
 <div class="modal-body" id="modal-body">
     <form class="form-horizontal" role="form">
 	    <div class="form-group">
           <div class="col-sm-10 col-sm-offset-1">
-              <label>Enter a room name</label>
-              <input type="text" class="form-control" ng-model="roomName">
+              <input type="text" class="form-control" placeholder="Enter a room name..." ng-model="roomName" ng-keyDown="submitRoom()">
           </div>
 		</div>
 	</form>
 </div>
 
-<div class="modal-footer">
-    <button class="btn btn-secondary" style="width: 48%" type="button" ng-click="cancel()">Cancel</button>
-    <button class="btn btn-success" style="width: 48%" type="button" ng-click="ok()">
-        Add &nbsp<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+<div class="modal-footer create-room_fon" id="modal_footer">
+    <button class="btn cancel_btn" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn add_btn" type="button" ng-click="ok()">
+        Add <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     </button>
+</div>
 </div>

@@ -1,0 +1,27 @@
+<div class="chatroom-content col-sm-8 col-md-9 col-lg-10 clear-padding" ng-show="showChatRoom(activeRoom)">
+                            
+        <div class="chatroom-header">
+            <div class="chatroom-title clear-margin">
+                {{activeRoom.$value}}
+            </div>
+        </div>
+   
+    
+        <div class="chatroom-body clear-margin" id="chatroom-body">
+            <div class="chatroom-messages" ng-repeat="message in messages">
+                <p class="firstOfDay" ng-show="messageDates(messages)">{{ message.firstOfDay }}</p>
+                <h3>{{ message.user_id }}<span class="small">&nbsp&nbsp{{ message.timeSent | date:'shortTime' }}</span></h3>
+                <p>&nbsp&nbsp&nbsp{{ message.content }}</p>
+            </div>
+        </div>
+   
+        <div class="chatroom-footer">
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="message" ng-keyPress="submitMessage()" placeholder="Add to {{activeRoom.$value}} conversation...">
+                    <span class="input-group-addon" ng-click="sendMessage()"><span class="glyphicon glyphicon-send"></span></span>
+                </div>
+            </form>
+        </div>
+   
+</div>

@@ -1,0 +1,94 @@
+.modal_title h1{
+    font-family: 'Monoton', cursive;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+    color: #ff66b8;
+}
+
+.modal_title h2, .modal_title h3{
+    font-family: 'Rock Salt', cursive;
+    color: yellow;
+}
+
+
+/**============ login modal ============**/
+
+.login-modal-backdrop {
+    opacity: .95 !important;
+    background-color: #555D71 !important;
+}
+
+.login-modal-window .modal-dialog {
+    position: relative !important;
+    min-height: 600px !important;
+}
+
+.login-modal-window .modal-dialog .modal-content {
+    font-family: "Courier New", Courier, monospace !important;
+    position: absolute !important;
+    top: 40% !important;
+    -webkit-transform: translateY(-50%) !important;
+    -moz-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
+    width: 100% !important;
+    text-align: center !important;
+    background-color: #00cccc !important;
+    color: white !important;
+    font-weight: 100 !important;
+}
+
+/**============ create room modal ============**/
+.create-room_modal {
+    background-color: #8a00e6;
+    color: white;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.add_btn {
+    background-color: #00cccc;
+    color: white;
+    width: 47%;
+}
+
+.add_btn:hover {
+    color: #ff00ff;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.cancel_btn {
+    width: 47%;
+    background-color: #ff00ff;
+    color: white;
+}
+
+.cancel_btn:hover {
+    color: yellow;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+
+
+
+
+#modal_btn {
+    background-color: #8a00e6;
+}
+
+#modal_btn:hover {
+    color: yellow;
+    font-weight: bold;
+}
+
+#modal_footer, #modal_header {
+    border: none;
+}
+
+
+@media only screen and (max-width: 435px) {
+  #modal_title {
+      font-size: 175%;
+  }
+}
+
