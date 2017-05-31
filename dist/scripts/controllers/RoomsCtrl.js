@@ -53,8 +53,8 @@
                 console.log(x);
                 //room.scrolltop = x;
                 setTimeout(function() {
-                  room.scrolltop = x;  
-                }, 50);
+                  room.scrollTop = x;  
+                }, 0);
             }
             
         };
@@ -96,7 +96,7 @@
                 
                 return messages;
         };
-    
+        
         
         $scope.getMessages = function(room_id) {
            $scope.messages = Message.getByRoomId(room_id);

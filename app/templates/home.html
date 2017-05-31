@@ -8,8 +8,8 @@
                 <!-- desktop header -->
                 
                     
-                <div class="hidden-xs desktop-header">
-                    <div class="col-sm-4 col-md-3 col-lg-2 clear-padding">
+                <div class="hidden-xs desktop-header clear-padding">
+                    <div class="col-sm-4 col-md-3 col-lg-2 clear-padding clear-margin">
                         <div class="create-room-btn" ng-click="chatRooms.openModal()">Create Room</div>
                     </div>
     
@@ -25,7 +25,7 @@
                 <!-- mobile header -->
                 <div class="visible-xs mobile-header row clear-margin clear-padding">
                     <div class="col-xs-2 dropdown">
-                        <div class="mobile-header-btn dropdown-toggle" data-toggle="dropdown-" aria-haspopup="true" aria-expanded="true" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                        <div class="mobile-header-btn dropdown-toggle" data-toggle="dropdown-menu" aria-haspopup="true" aria-expanded="true" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
                             <span class="glyphicon glyphicon-menu-hamburger"></span>
                         </div>
                       
@@ -49,75 +49,72 @@
     
 <!--page body -->
             
-                <!-- desktop body -->
-                <div class="hidden-xs desktop-body">
-                    <div class="row clear-margin clear-padding">
-                        <div class="chatroom-list col-sm-4 col-md-3 col-lg-2 ">
-                            <div class="chatroom-name" ng-repeat="room in chatRooms.roomList" ng-click="selectRoom(room); getMessages(room)">{{ room.$value }}</div>
-                        </div>
-                        
-                        <div class="chatroom-content col-sm-8 col-md-9 col-lg-10 clear-padding" ng-show="showChatRoom(activeRoom)">
-                            
-                                <div class="chatroom-header">
-                                    <div class="chatroom-title clear-margin">
-                                        {{activeRoom.$value}}
-                                    </div>
-                                </div>
-                           
-                            
-                                <div class="chatroom-body clear-margin" id="chatroom-body">
-                                    <div class="chatroom-messages" ng-repeat="message in messages">
-                                        <p class="firstOfDay" ng-show="messageDates(messages)">{{ message.firstOfDay }}</p>
-                                        <h3>{{ message.user_id }}<span class="small">&nbsp&nbsp{{ message.timeSent | date:'shortTime' }}</span></h3>
-                                        <p>&nbsp&nbsp&nbsp{{ message.content }}</p>
-                                    </div>
-                                </div>
-                           
-                                <div class="chatroom-footer">
-                                    <form>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" ng-model="message" ng-keyPress="submitMessage()" placeholder="Add to {{activeRoom.$value}} conversation...">
-                                            <span class="input-group-addon" ng-click="sendMessage()"><span class="glyphicon glyphicon-send"></span></span>
-                                        </div>
-                                    </form>
-                                </div>
-                           
-                        </div>
+    <!-- desktop body -->
+    <div class="hidden-xs desktop-body">
+        <div class="row clear-margin clear-padding">
+            <div class="chatroom-list col-sm-4 col-md-3 col-lg-2 ">
+                <div class="chatroom-name" ng-repeat="room in chatRooms.roomList" ng-click="selectRoom(room); getMessages(room)">{{ room.$value }}</div>
+            </div>
             
-                    </div>
-                </div>
+            <div class="chatroom-content col-sm-8 col-md-9 col-lg-10 clear-padding" ng-show="showChatRoom(activeRoom)">
                 
-                <!-- mobile body -->
-                <div class="visible-xs col-xs-12 clear-padding">
-                    <div class="chatroom-content" ng-show="showChatRoom(activeRoom)">
-                            
-                        <div class="chatroom-header">
-                            <div class="mobile-chatroom-title clear-margin">
-                                {{activeRoom.$value}}
-                            </div>
-                        </div>
-                   
-                    
-                        <div class="mb-chatroom-body clear-margin">
-                            <div class="chatroom-messages" ng-repeat="message in messages">
-                                <p class="firstOfDay" ng-show="messageDates(messages)">{{ message.firstOfDay }}</p>
-                                <h4>{{ message.user_id }}<span class="small">&nbsp&nbsp{{ message.timeSent | date:'shortTime' }}</span></h4>
-                                <p>&nbsp&nbsp&nbsp{{ message.content }}</p>
-                            </div>
-                        </div>
-                   
-                        <div class="chatroom-footer">
-                            <form>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" ng-model="message" ng-keyPress="submitMessage()" placeholder="Add to {{activeRoom.$value}} conversation...">
-                                    <span class="input-group-addon" ng-click="sendMessage()"><span class="glyphicon glyphicon-send"></span></span>
-                                </div>
-                            </form>
-                        </div>
-                           
+                    <div class="chatroom-header">
+                        {{activeRoom.$value}}
                     </div>
-                </div>
+        
+                    <div class="chatroom-body clear-margin" id="chatroom-body">
+                        <div class="chatroom-messages" ng-repeat="message in messages">
+                            <div class="firstMessageOfDay" ng-show="messageDates(messages)">{{ message.firstOfDay }}</div>
+                            <div class="user">{{ message.user_id }}</div>
+                            <div class="message-content">{{ message.content }}</div>
+                            <div class="date">{{ message.timeSent | date:'shortTime' }}</div>
+                        </div>
+                    </div>
+               
+                    <div class="chatroom-footer">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="message" ng-keyPress="submitMessage()" placeholder="Add to {{activeRoom.$value}} conversation...">
+                                <span class="input-group-addon" ng-click="sendMessage()"><span class="glyphicon glyphicon-send"></span></span>
+                            </div>
+                        </form>
+                    </div>
+               
+            </div>
+
         </div>
-    </div>        
+    </div>
+            
+            <!-- mobile body -->
+    <div class="visible-xs col-xs-12 clear-padding">
+        <div class="chatroom-content" ng-show="showChatRoom(activeRoom)">
+                
+            <div class="chatroom-header">
+                {{activeRoom.$value}}
+            </div>
+       
+        
+            <div class="mb-chatroom-body">
+                <div class="mb-chatroom-messages" ng-repeat="message in messages">
+                    <div class="firstMessageOfDay" ng-show="messageDates(messages)">{{ message.firstOfDay }}</div>
+                    <div class="user">{{ message.user_id }}</div>
+                    <div class="date clearfix">{{ message.timeSent | date:'shortTime' }}</div>
+                    <div class="message-content">{{ message.content }}</div>
+                    
+                </div>
+            </div>
+       
+            <div class="chatroom-footer">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="message" ng-keyPress="submitMessage()" placeholder="Add to {{activeRoom.$value}} conversation...">
+                        <span class="input-group-addon" ng-click="sendMessage()"><span class="glyphicon glyphicon-send"></span></span>
+                    </div>
+                </form>
+            </div>
+               
+        </div>
+    </div>
+</div>
     
-</div> 
+    

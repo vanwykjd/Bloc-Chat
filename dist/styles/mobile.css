@@ -44,8 +44,8 @@
     display: none;
     position: absolute;
     background-color: #555D71;
-    
     height: 50vh;
+    overflow: hidden;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -74,12 +74,55 @@
 }
 
 .mb-chatroom-body {
-    width: 100%;
-    height: 100vh;
-    padding: 10px 15px 300px 15px;
-    overflow: auto !important;
+    height: calc(100vh - 180px);
+    padding-bottom: 100px;
+    overflow-y: auto !important;
 }
 
+.mb-chatroom-messages {
+    width: 100%;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.mb-chatroom-messages .firstMessageOfDay {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: solid #C0C0C0 1px;
+    border-bottom: solid #C0C0C0 1px;
+    text-align: center;
+    color: #A9A9A9;
+}
+
+.mb-chatroom-messages .user {
+    display: inline-block;
+    float: left;
+    height: auto;
+    width: 50%;
+    padding-left: 5px;
+    font-size: 125%;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.mb-chatroom-messages .message-content {
+    height: auto;
+    display: inline-block;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 100%;
+}
+
+.mb-chatroom-messages .date {
+    display: inline-block;
+    height: auto;
+    width: 50%;
+    padding-right: 20px;
+    text-align: right;
+    font-size: 75%;
+    color: #A9A9A9;
+}
 
 @media only screen and (max-width: 410px) {
   .mobile-header-greeting h3 {
